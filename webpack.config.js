@@ -3,7 +3,7 @@ module.exports = {
   entry: "./app/main.js",
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: "/dist/",
+    publicPath: "/build/",
     filename: "bundle.js"
   },
   module: {
