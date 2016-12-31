@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import Prism from './assets/prism';
+
 var codeString = `
 module.exports = AutoFocusUtils; 
 },{"155":155,"41":41}],2:[function(_dereq_,module,exports){
@@ -1092,4 +1097,4 @@ class CodeComponent extends React.Component {
 	}
 };
 
-ReactDOM.render(<App />, document.getElementById('main'));
+export default App

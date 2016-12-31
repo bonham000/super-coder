@@ -1,33 +1,23 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+var path = require("path");
 module.exports = {
-  entry: [
-    'webpack-dev-server/client?http://localhost:3333',
-    'webpack/hot/only-dev-server',
-    './main.js'
-    ],
+  entry: "./app/main.js",
   output: {
-    path: __dirname + '/dist',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "build"),
+    publicPath: "/dist/",
+    filename: "bundle.js"
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
   module: {
     loaders: [
        {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel'],
+        loaders: ['babel-loader'],
         },
-        { test: /\.scss$/,
-          loader: ExtractTextPlugin.extract( 'style-loader', 'css-loader!sass-loader' )
-        },
+        {
+          test: /\.css/,
+          include: path.join(__dirname, "app"),
+          loaders: ['style-loader', 'css-loader']
+        }
       ]
      },
-     plugins: [
-      new ExtractTextPlugin( 'bundle.css' )
-    ]
 };

@@ -3,15 +3,26 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React Build</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> -->
-  <link rel="stylesheet" href="css/prism.css">
+    <title>Super Coder</title>
+    <style>
+      body {
+        background: rgb(15,15,15);
+        padding: 0 0 0 8px;
+        margin: 0;
+        color: rgb(15,250,50);
+      }
+      #codeContainer {
+        margin-top: 0px;
+        height: 85vh;
+      }
+      code {
+        font-size: 12px;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="main"></div>
-
-    <script src="js/prism.js"></script>
-    <script src="/static/bundle.js"></script>
+    <div id="root"></div>
+    <script src="dist/bundle.js"></script>
   </body>
 </html>
